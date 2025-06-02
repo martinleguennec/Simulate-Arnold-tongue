@@ -108,7 +108,7 @@ def simulate_forced_hkb_grid_params(
 
     # Noise vector: applied only to the first dimension of the state vector since the other two dimensions define the 
     # second-order derivative and the time
-    D = [noise_strength, 0, 0]
+    Q = [noise_strength, 0, 0]
 
     # Initial conditions: if not provided, use a default value
     if initial_conditions is None:
@@ -158,7 +158,7 @@ def simulate_forced_hkb_grid_params(
                 forcing = forcing_series[i]
                 xdot = forced_hkb_ode(x[-1], forcing, F=F, omega=omega_0)
                 x = np.append(x, 
-                              np.array([x[-1] + (xdot + np.sqrt(D) * np.random.normal(0, 1, 3)) * dt]), 
+                              np.array([x[-1] + (xdot + np.sqrt(Q) * np.random.normal(0, 1, 3)) * dt]), 
                               axis = 0)
             
             # Calculate the instantaneous phase of the oscillator, then the relative phase
