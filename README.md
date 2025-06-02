@@ -25,33 +25,32 @@ To ensure reproducibility and avoid dependency conflicts, it is recommended to u
 
     On macOS and Linux:
 
-```bash
-python3 -m venv .venv
-```
+    ```bash
+    python3 -m venv .venv
+    ```
 
     On Windows:
 
-```cmd
-python -m venv .venv
-```
-
+    ```cmd
+    python -m venv .venv
+    ```
 
 3. Activate the virtual environment:
 
     On macOS and Linux:
 
-```bash
-source .venv/bin/activate
-```
+    ```bash
+    source .venv/bin/activate
+    ```
 
     On Windows (Command Prompt):
 
-```cmd
-.venv\Scripts\activate
-```
+    ```cmd
+    .venv\Scripts\activate
+    ```
 
 4. Install the required packages:
 
-```bash
-pip install numpy matplotlib scipy
-```
+    ```bash
+    pip install numpy matplotlib scipy
+    ```
