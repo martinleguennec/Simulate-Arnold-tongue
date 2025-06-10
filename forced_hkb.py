@@ -66,15 +66,23 @@ def simulate_forced_hkb_grid_params(
     """
     Simulates the forced HKB model for a grid of coupling strengths and frequencies.
     
-    This function integrates the forced HKB model using the Euler method for a specified number of iterations and
-    time step. It computes the time series of the first dimension of the state vector, the relative phase of the
-    oscillator with respect to the forcing, and statistics of the relative phase (dispersion and mean).
+    This function integrates the forced HKB model using the Euler method [1] with different values for coupling strength
+    and forcing frequency. It computes the time series of the first dimension of the state vector, the relative phase of 
+    the oscillator with respect to the forcing, and statistics of the relative phase (dispersion and mean; see [2]). The
+    aim of looping through different values of coupling strength and forcing frequency is to identify the set of 
+    parameters for which the dispersion of relative phase is low, indicative of synchronization: this region is called 
+    an Arnold tongue (for original paper see [3], for a review of the concept see [4]).
 
     References:
     ----------
-    Higham., D. J. (2001). An Algorithmic Introduction to Numerical Simulation of Stochastic Differential Equations. 
+    [1] Higham., D. J. (2001). An Algorithmic Introduction to Numerical Simulation of Stochastic Differential Equations. 
         SIAM Review, 43(3), 525–546. https://doi.org/10.1137/S0036144500378302
-    Mardia, K. V. (1972). Statistics of Directional Data. Academic Press, London.
+    [2] Mardia, K. V. (1972). Statistics of Directional Data. Academic Press, London.
+    [3] Arnold, V. I. (1961). Small denominator I: on the mapping of a circle into itself. Izvestiya Akademii Nauk SSSR 
+        Seriya Matematicheskaya, 25(1), 21-86.
+    [4] Pikovsky, A., Rosenblum, M., & Kurths, J. (2001). Synchronization: A Universal Concept in Nonlinear Sciences 
+        (1st edition). Cambridge University Press.
+
 
     Parameters:
     ----------
