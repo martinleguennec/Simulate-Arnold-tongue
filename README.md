@@ -1,6 +1,6 @@
 # Simulate Arnold tongue
 
-This repository contains code to simulated a forced Haken-Kelso-Bunz (HKB) oscillator under varying coupling strengths and forcing frequencies. The goal is to visualize the regions of synchronization--referred to as **Arnold tongues** -- by analyzing the dispersion of the relative phase (SD $\phi$).
+This repository contains code to simulated a forced Haken-Kelso-Bunz (HKB) oscillator under varying coupling strengths and forcing frequencies. The goal is to visualize the regions of synchronization—referred to as **Arnold tongues**---by analyzing the dispersion of the relative phase (SD $\phi$).
 
 Low values of SD $\phi$ indicate stable synchronization, allowing the identification of the parameter space (frequency × coupling) that defines the Arnold tongue.
 
