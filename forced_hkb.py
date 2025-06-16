@@ -156,7 +156,7 @@ def simulate_forced_hkb_grid_params(
             simulation_percentage = (simulation_idx / total_simulations) * 100
             if simulation_percentage - last_simulation_percentage >= 10:
                 stage_time = time.time() - start_time
-                print(f"Simulation progress: {simulation_percentage:n}% (time elapsed: {stage_time / 60:.2f} minutes)")
+                print(f"    Simulation progress: {simulation_percentage:n}% (time elapsed: {stage_time / 60:.2f} minutes)")
                 last_simulation_percentage = last_simulation_percentage + 10
         
             # Integrate the system with Euler method
@@ -172,7 +172,7 @@ def simulate_forced_hkb_grid_params(
             # Calculate the instantaneous phase of the oscillator, then the relative phase
             # By convention, phi_rel < 0 means the oscillator is lagging behind the forcing and phi_rel > 0 means it is leading
             phi_x = np.angle(hilbert(x[:,0]))
-            phi_rel = phi_x - phi_stim
+            phi_rel = phi_stim - phi_x
             phi_rel = np.mod(phi_rel + np.pi, 2 * np.pi) - np.pi  # Normalize the relative phase to the range [-pi, pi]
 
             # Calculate the dispersion of the relative phase and its mean value (circular statistics; see Mardia, 1972)
